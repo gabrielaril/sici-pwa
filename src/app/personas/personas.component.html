@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col">            
+            <button type="button" class="btn btn-primary"
+            [disabled]="activo"
+            (click)="onCreatePersona()">Agregar persona</button>
+
+            <!--(input)="oncChangeTituloPersona"-->
+            <input type="text" class="form-control"
+            [(ngModel)]="tituloPersona"/>
+            <p>{{tituloPersona}}</p>
+
+            <p  *ngIf="creado; else sinpersona">{{creado}}</p>
+            <ng-template #sinpersona>
+                <p>No se ha agregado persona</p>
+            </ng-template>
+
+          
+            <div class="box">
+                <app-persona *ngFor="let p of personas; let i = index" 
+                [persona]="p"
+                [index]="i">
+                </app-persona>
+            </div> 
+            <div class="box">
+                <app-formulario></app-formulario>
+            </div>     
+        </div>
+    </div>
+</div>
