@@ -17,7 +17,7 @@ export class FormularioComponent {
    }
 
   onAgregar(apellidoInput: HTMLInputElement) {
-    let persona = new Persona (this.nombreInput, this.apellidoInput.nativeElement.value);
+    const persona = new Persona (this.nombreInput, this.apellidoInput.nativeElement.value);
     this.loggingServise.mostrarMensaje('Hola');
     this.personasService.agregarPersona(persona);
   }
