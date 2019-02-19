@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: '', component: PersonasComponent},
   { path: 'personas', component: PersonasComponent},
   { path: 'personas/agregar', component: FormularioComponent},
-  { path: 'personas/editar/:id', component: PersonasComponent}];
+  { path: 'personas/:id', component: FormularioComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

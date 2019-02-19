@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from '../persona.model';
 import { PersonasService } from '../PersonasService.service';
+import { Router } from '@angular/router';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Component({
     selector: 'app-personas',
@@ -14,7 +16,8 @@ export class PersonasComponent implements OnInit {
     tituloPersona = 'gaby';
     personas: Persona[] = [];
 
-    constructor(private ps: PersonasService) {}
+    constructor(private ps: PersonasService,
+                private router: Router) {}
     ngOnInit(): void {
         this.personas = this.ps.personas;
     }
@@ -29,7 +32,8 @@ export class PersonasComponent implements OnInit {
     }
 
     onAgregarPersona(p: Persona) {
-      this.ps.agregarPersona(p);
+        this.router.navigate(['personas/agregar']);
+      // this.ps.agregarPersona(p);
     }
 }
 
