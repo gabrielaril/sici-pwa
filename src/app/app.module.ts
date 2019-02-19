@@ -9,13 +9,19 @@ import { PersonasService } from './PersonasService.service';
 import { AppRoutingModule } from './app-routing.module';
 import { PersonaComponent } from './personas/persona/persona.component';
 import { FormularioComponent } from './personas/formulario/formulario.component';
+import { UserComponent } from './user/user.component';
+import { HeroesComponent } from './heroes/heroes.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonasComponent,
     PersonaComponent,
-    FormularioComponent
+    FormularioComponent,
+    UserComponent,
+    HeroesComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
