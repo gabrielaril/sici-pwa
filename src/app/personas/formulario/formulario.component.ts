@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef , Input} from '@angular/core';
 import { Persona } from '../../persona.model';
 import { LoggingService } from '../../LoggingServise.service';
 import { PersonasService } from '../../PersonasService.service';
@@ -9,10 +9,12 @@ import { PersonasService } from '../../PersonasService.service';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent {
+  
   nombreInput: string;
   @ViewChild('apellidoInput') apellidoInput: ElementRef;
 
-  constructor(private loggingServise: LoggingService, private personasService: PersonasService) {
+  constructor(private loggingServise: LoggingService, private personasService: PersonasService, 
+      ) {
     this.personasService.saludar.subscribe((index: number) => alert('El indice es ' + index));
    }
 
