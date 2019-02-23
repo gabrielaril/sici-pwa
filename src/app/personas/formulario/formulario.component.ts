@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef , Input} from '@angular/core';
 import { Persona } from '../../persona.model';
 import { LoggingService } from '../../LoggingServise.service';
 import { PersonasService } from '../../PersonasService.service';
@@ -9,17 +9,27 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.css']
 })
+<<<<<<< HEAD
 
 export class FormularioComponent implements OnInit {
+=======
+export class FormularioComponent {
+  
+>>>>>>> cf962689184895ac8982e84330fad5ac84e33c6e
   nombreInput: string;
   @ViewChild('apellidoInput') apellidoInput: ElementRef;
   index: number;
   modoEdicion: number;
 
+<<<<<<< HEAD
    constructor(private loggingServise: LoggingService,
                private personasService: PersonasService,
                private router: Router,
                private route: ActivatedRoute) {
+=======
+  constructor(private loggingServise: LoggingService, private personasService: PersonasService, 
+      ) {
+>>>>>>> cf962689184895ac8982e84330fad5ac84e33c6e
     this.personasService.saludar.subscribe((index: number) => alert('El indice es ' + index));
    }
 
