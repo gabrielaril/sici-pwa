@@ -7,8 +7,33 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Android -->
+  <meta name="theme-color" content="#3498db">
 </head>
 <body>
   <app-root></app-root>
+  <script>
+    if ( navigator.serviceWorker ) {
+      navigator.serviceWorker.register('/sw.js').then(function (reg) {
+
+        if (reg.installing) {
+          console.log('Service worker installing');
+        } else if (reg.waiting) {
+          console.log('Service worker installed');
+        } else if (reg.active) {
+          console.log('Service worker active');
+        }
+
+      }).catch(function (error) {
+        // registration failed
+        console.log('Registration failed with ' + error);
+      });
+    }
+
+  </script>
 </body>
 </html>

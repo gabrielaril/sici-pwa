@@ -10,6 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { PersonaComponent } from './personas/persona/persona.component';
 import { FormularioComponent } from './personas/formulario/formulario.component';
 import { ErrorComponent } from './error/error.component';
+import { UserComponent } from './user/user.component';
+import { HeroesComponent } from './heroes/heroes.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,12 +21,16 @@ import { ErrorComponent } from './error/error.component';
     PersonasComponent,
     PersonaComponent,
     FormularioComponent,
-    ErrorComponent
+    ErrorComponent,
+    UserComponent,
+    HeroesComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [LoggingService, PersonasService],
   bootstrap: [AppComponent]
